@@ -115,6 +115,57 @@ public class Hangman {
                         System.out.println();
                         break;
                 }
+            
+                // Prompt to the user if their guess is letter or a word
+                System.out.println("Do you want to guess a letter or a word?");
+                System.out.println("Type \"letter\" to guess a letter or \"word\" to guess a word");
+                String letterOrWord = kb.next();
+                String letter = "letter";
+                String thisIsWord = "word";
+                
+                // If the user wants guess a letter, the program will do the following
+                if (letterOrWord.equals(letter)) {
+                    // Output
+                    System.out.println("Take a guess!");
+                    // Taking input of the user of a letter
+                    char guessLetter = kb.next().charAt(0);
+                    // Converting a char value into a string for future method appplications
+                    String guessLetterToString = Character.toString(guessLetter);
+
+                    if (letterAlreadyGuessed.contains(guessLetterToString)){
+                        System.out.println("You have already guessed this letter");
+                    }
+                    // If the guessed letter inputted by the user corresponds to the word
+                    else if (word.contains(guessLetterToString) && !hiddenWord.contains(guessLetterToString)) {
+                        // Increment the points
+                        points++;
+                        System.out.println("+1 point");
+                        System.out.println("You now have " + points + " points");
+                        // A for loop to itterate over the whole word by changing all the "?" that corresponds to the letter inputted
+                        for (int i = 0; i < hiddenWord.length(); i++) {
+                            // This loop itterated letter by letter
+                            if (word.charAt(i) == guessLetter) {
+                                hiddenWord = hiddenWord.substring(0,i) + guessLetterToString + hiddenWord.substring(i+1);
+                            }
+                        }
+                        letterAlreadyGuessed = letterAlreadyGuessed + guessLetterToString;
+                        // Output the new hidden word
+                        System.out.println("The letter " + guessLetterToString + " was found!");
+                        System.out.println(hiddenWord);
+                        
+                    // If the letter inputted does not correspond to a letter in the word, then..
+                    } else {
+                        // Output to the user that the letter has not been found
+                        System.out.println("The letter you have inputted was not found in the word");
+                        letterAlreadyGuessed = letterAlreadyGuessed + guessLetterToString;
+                        // Increment the wrong guess value
+                        wrongGuess++;
+                        // Decrement the points
+                        points--;
+                        System.out.println("-1 point!");
+                        System.out.println("You now have " + points + " points");
+                    }
+                }
             }
         }
     }
