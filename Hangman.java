@@ -159,5 +159,41 @@ public class Hangman {
         System.out.println("|     ===========    |");
         System.out.println("|--------------------|");
     }
+    /**
+     * This method outputs to the user the face, the body and both of the legs of the hangman
+     */
+    public static void wrongGuess4() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|       /\\       |   |");
+        System.out.println("|      /  \\      |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
+    /**
+     * This method outputs to the user the face, the body, both of the legs and one of the arms of the hangman
+     */
+    public static void wrongGuess5() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|       /|       |   |");
+        System.out.println("|      / |       |   |");
+        System.out.println("|       /\\       |   |");
+        System.out.println("|      /  \\      |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
 }
 
