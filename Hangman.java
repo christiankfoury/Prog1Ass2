@@ -86,5 +86,38 @@ public class Hangman {
             break;
         }
     }
+    public static void wrongGuess0() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
+    /**
+     * This method outputs to the user the face of the hangman image 
+     */
+    public static void wrongGuess1() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
 }
 
