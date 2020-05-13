@@ -5,7 +5,7 @@ import java.util.*;
  * @author Christian
  */
 
-public class Hangman {
+public class HangmanReal {
     
     /** 
      * The main method executes the whole hangman program
@@ -199,6 +199,39 @@ public class Hangman {
                 else {
                     // Output the input they have done is not valid
                     System.out.println("This was not a valid choice!");
+                }
+
+                // IF the hidden word does not contain anymore "?" then the user has fully guessed the word
+                if (!hiddenWord.contains("?")) {
+                    // Change the value of isWordGuessed to true
+                    isWordGuessed = true;
+                    System.out.println("You have guessed the word!\n");
+                    // Ask the user if they want to play again
+                    System.out.println("Do you want to play again? Yes or no");
+                    // Getting their input and putting it into a lower case value to reduce confusion for future comparaisons
+                    answer = kb.next().toLowerCase();
+
+                    // If the user does not input yes or no loop the question 
+                    while (!answer.equals("yes") && !answer.equals("no")){
+                        // Output
+                        System.out.println("This was not a valid input");
+                        System.out.println("Do you want to play again? Yes or no");
+                        // Recieve input from the user
+                        answer = kb.next().toLowerCase();
+                    }
+
+                    // If their input is yes then...
+                    if (answer.equals("yes")) {
+                        // Take a word from the hangman dictionnary
+                        if (scFile.hasNext()) {
+                            word = scFile.next().toLowerCase();
+                        } else {
+                            System.out.println("Congratulations! You are the hangman king or queen!");
+                            System.out.println("You completed with a total of " + points + " points!");
+                            System.out.println("Thanks for playing!");
+                            System.exit(0);
+                        }
+                    }
                 }
             }
         }
