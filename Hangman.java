@@ -165,10 +165,45 @@ public class Hangman {
                         System.out.println("-1 point!");
                         System.out.println("You now have " + points + " points");
                     }
+                
+                }
+                // Else if the user wants to guess a word then...
+                else if (letterOrWord.equals(thisIsWord)){
+                    // Output
+                    System.out.println("Take a guess!");
+                    // Taking input from the user
+                    String guessedWord = kb.next();
+                    // If the word inputted corresponds to the word to be guessed then...
+                    if (word.equalsIgnoreCase(guessedWord)) {
+                        hiddenWord = word;
+                        // Change the value of isWordGuessed
+                        isWordGuessed = true;
+                        // Increment points
+                        points += 2;
+                        System.out.println("+2 points!");
+                        System.out.println("You now have " + points + " points");
+
+                      // Else the word inputted by the user does not correspond to the word to be guess then...
+                    } else {
+                        // Output to the user they haven't guessed the right word
+                        System.out.println("The word you have entered is not the right word!");
+                        // Decrement the points
+                        points -= 2;
+                        System.out.println("-2 points!");
+                        System.out.println("You now have " + points + " points");
+                        // Increment the wrongGuess value
+                        wrongGuess++;
+                    } 
+                }
+                // Else the user inputs something else when they are asked to input a letter or word then..
+                else {
+                    // Output the input they have done is not valid
+                    System.out.println("This was not a valid choice!");
                 }
             }
         }
     }
+
     /**
      * This method welcome the user and outputs the rules, 
      * then this method will ask the user if they want to start the game by entering 1 or quit game by entering 0
