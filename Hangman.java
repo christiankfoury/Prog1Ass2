@@ -50,6 +50,73 @@ public class Hangman {
         String hiddenWord = word.replaceAll(".", "?");
         // Output the hidden word
         System.out.println(hiddenWord);
+        
+        // Skipping a line
+        System.out.println();
+
+        // A first do while loop to loop over if the user wants to play again
+        do{
+            // A second do while loop to loop over if the user guesses the word or terminated the game
+            do {
+                switch (wrongGuess){
+                    case 1:
+                        // Call this method if the wrong guess is equal to 1
+                        wrongGuess1();
+                        // Skip a line
+                        System.out.println();
+                        break;
+                    
+                    case 2:
+                        // Call this method if the wrong guess is equal to 2
+                        wrongGuess2();
+                        // Skip a line
+                        System.out.println();
+                        break;
+
+                    case 3:
+                        // Call this method if the wrong guess is equal to 3
+                        wrongGuess3();
+                        // Skip a line
+                        System.out.println();
+                        break;
+                    
+                    case 4:
+                        // Call this method if the wrong guess is equal to 4
+                        wrongGuess4();
+                        // Skip a line
+                        System.out.println();
+                        break;
+
+                    case 5: 
+                        // Call this method if the wrong guess is equal to 5
+                        wrongGuess5();
+                        // Output to the user that this is their last guess
+                        System.out.println("**THIS IS YOUR LAST GUESS**");
+                        // Skip a line
+                        System.out.println();
+                        break;
+
+                    case 6:
+                        // Call this method if the wrong guess is equal to 6
+                        wrongGuess6();
+                        // Output that the is game over
+                        System.out.println("Game Over!");
+                        // Output the amount of points
+                        System.out.println("The amount of points accumulated were " + points + " points!");
+                        // Output
+                        System.out.println("Thanks for playing! Goodbye!");
+                        // System exit
+                        System.exit(0);
+                        break;
+                    default:
+                        // The default case is to call the standart wrongGuess method 
+                        wrongGuess0();
+                        // Skip a line
+                        System.out.println();
+                        break;
+                }
+            }
+        }
     }
     /**
      * This method welcome the user and outputs the rules, 
@@ -190,6 +257,21 @@ public class Hangman {
         System.out.println("|      / |       |   |");
         System.out.println("|       /\\       |   |");
         System.out.println("|      /  \\      |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
+    public static void wrongGuess6() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|       /|\\     |   |");
+        System.out.println("|      / | \\    |   |");
+        System.out.println("|       /\\      |   |");
+        System.out.println("|      /  \\     |   |");
         System.out.println("|                |   |");
         System.out.println("|                |   |");
         System.out.println("|     ===========    |");
