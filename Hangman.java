@@ -5,7 +5,7 @@ import java.util.*;
  * @author Christian
  */
 
-public class HangmanReal {
+public class Hangman {
     
     /** 
      * The main method executes the whole hangman program
