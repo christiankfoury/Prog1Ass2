@@ -2,10 +2,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 /**
+ * This program is a hangman game. The user can guess a letter or a word from the word to be guessed. There is also a points system
+ * in which a user tries to accumulate the most points while trying to guess the word. If the word is guessed the user can 
+ * play again for another round.
  * @author Christian
  */
 
-public class HangmanReal {
+public class Hangman {
     
     /** 
      * The main method executes the whole hangman program
@@ -407,9 +410,10 @@ public class HangmanReal {
         System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
         // Using the scanner class
         Scanner input = new Scanner(System.in);
+        // The choice of the user
         int choice = 0;
         boolean isNumber = false;
-
+        // A do while loop if the user does not input a valid number
         do{
             isNumber = false;
             if (input.hasNextInt()){
