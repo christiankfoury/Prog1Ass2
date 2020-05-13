@@ -231,46 +231,32 @@ public class HangmanReal {
                             System.out.println("Thanks for playing!");
                             System.exit(0);
                         }
+                        // Length of word
+                        numberOfLetters = word.length();
+                        // Output how many letter does the word contain
+                        System.out.println("This word contains " + numberOfLetters + " letters");
+                        // A hidden word that is disguised by "?" to play as the word
+                        hiddenWord = word.replaceAll(".", "?");
+                        // Output the hidden word
+                        System.out.println(hiddenWord);
+                        isWordGuessed = false;
+                        wrongGuess = 0;
+                        letterAlreadyGuessed = "";
+                    }
+                    // Else if their input if no then...
+                    else if (answer.equals("no")){
+                        // Output their amount of points accumulated
+                        System.out.println("The amount of points accumulated were " + points + " points!");
+                        System.out.println("Thanks for playing! Goodbye!");
+                        // System exit
+                        System.exit(0);
                     }
                 }
-            }
+            } while(isWordGuessed == false);
         }
-    }
-
-    /**
-     * This method welcome the user and outputs the rules, 
-     * then this method will ask the user if they want to start the game by entering 1 or quit game by entering 0
-     */
-    public static void startMenu(){
-        // Welcome output
-        System.out.println("Welcome to hangman!\n");
-        // Output the rules
-        System.out.println("These are the rules:");
-        System.out.println("- You have 6 guesses at each word");
-        System.out.println("- You can guess a letter or a word");
-        System.out.println("- +1 points if a letter is guessed ");
-        System.out.println("- -1 points if letter guessed is wrong");
-        System.out.println("- +2 points if a word is guessed");
-        System.out.println("- -2 points if word guessed is wrong\n");
         
-        System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
-        switch (choice) 
-        {
-        case 0:
-            System.out.println("Thanks for playing the game");
-            System.exit(0);
-            break;
-    
-        case 1:
-            System.out.println("Game Initalized");
-        default:
-            System.out.println("Error: unnexpected value");
-            System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
-            startMenu();
-            break;
-        }
+        while (answer.equals("yes"));
+        
     }
     /**
      * This method outputs to the user the standard hangman image
@@ -308,6 +294,7 @@ public class HangmanReal {
         System.out.println("|     ===========    |");
         System.out.println("|--------------------|");
     }
+
     /**
      * This method outputs to the user the face and the body of the hangman image
      */
@@ -345,6 +332,7 @@ public class HangmanReal {
         System.out.println("|     ===========    |");
         System.out.println("|--------------------|");
     }
+    
     /**
      * This method outputs to the user the face, the body and both of the legs of the hangman
      */
@@ -381,6 +369,9 @@ public class HangmanReal {
         System.out.println("|     ===========    |");
         System.out.println("|--------------------|");
     }
+     /**
+     * This method outputs the full hangman to the user which consists the face, the body, both of the legs and both of the arms of the hangman
+     */
     public static void wrongGuess6() {
         System.out.println("---------------------|");
         System.out.println("|        |-------    |");
@@ -396,5 +387,60 @@ public class HangmanReal {
         System.out.println("|     ===========    |");
         System.out.println("|--------------------|");
     }
-}
+    /**
+     * This method welcome the user and outputs the rules, 
+     * then this method will ask the user if they want to start the game by entering 1 or quit game by entering 0
+     */
+    public static void startMenu(){
+        // Welcome output
+        System.out.println("Welcome to hangman!\n");
+        // Output the rules
+        System.out.println("These are the rules:");
+        System.out.println("- You have 6 guesses at each word");
+        System.out.println("- You can guess a letter or a word");
+        System.out.println("- +1 points if a letter is guessed ");
+        System.out.println("- -1 points if letter guessed is wrong");
+        System.out.println("- +2 points if a word is guessed");
+        System.out.println("- -2 points if word guessed is wrong\n");
+        
+        // Game menu
+        System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
+        // Using the scanner class
+        Scanner input = new Scanner(System.in);
+        int choice = 0;
+        boolean isNumber = false;
 
+        do{
+            isNumber = false;
+            if (input.hasNextInt()){
+                choice = input.nextInt();
+                isNumber = true;
+            } else {
+                System.out.println("This was not a valid input!");
+                System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
+                input.next();
+            }
+        } while(!isNumber);
+        
+
+        // Using the switch case statement
+        switch (choice) 
+        {
+        // If the user inputs 0 then exit the game
+        case 0:
+            System.out.println("Thanks for playing the game");
+            System.exit(0);
+            break;
+    
+        // If the use inputs 1 then play the game
+        case 1:
+            System.out.println("Game Initalized");
+        default:
+        // If the user inputs something else than a number, then loop back the startMenu method
+            System.out.println("Error: unnexpected value");
+            System.out.println("0. Quit Game\n1. Start Game\n Enter your choice: ");
+            startMenu();
+            break;
+        }
+    }
+}
