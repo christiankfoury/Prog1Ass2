@@ -86,6 +86,9 @@ public class Hangman {
             break;
         }
     }
+    /**
+     * This method outputs to the user the standard hangman image
+     */
     public static void wrongGuess0() {
         System.out.println("---------------------|");
         System.out.println("|        |-------    |");
@@ -114,6 +117,43 @@ public class Hangman {
         System.out.println("|                |   |");
         System.out.println("|                |   |");
         System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
+    /**
+     * This method outputs to the user the face and the body of the hangman image
+     */
+    public static void wrongGuess2() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|                |   |");
+        System.out.println("|     ===========    |");
+        System.out.println("|--------------------|");
+    }
+    
+    /**
+     * This method outputs to the user the face, the body and one of the legs of the hangman
+     */
+    public static void wrongGuess3() {
+        System.out.println("---------------------|");
+        System.out.println("|        |-------    |");
+        System.out.println("|       ___      |   |");
+        System.out.println("|      \\  /      |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|        |       |   |");
+        System.out.println("|       /        |   |");
+        System.out.println("|      /         |   |");
         System.out.println("|                |   |");
         System.out.println("|                |   |");
         System.out.println("|     ===========    |");
