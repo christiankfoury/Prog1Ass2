@@ -104,6 +104,8 @@ public class Hangman {
                         wrongGuess6();
                         // Output that the is game over
                         System.out.println("Game Over!");
+                        // Output the word
+                        System.out.println("The word was " + word);
                         // Output the amount of points
                         System.out.println("The amount of points accumulated were " + points + " points!");
                         // Output
@@ -381,10 +383,10 @@ public class Hangman {
         System.out.println("|       ___      |   |");
         System.out.println("|      \\  /      |   |");
         System.out.println("|        |       |   |");
-        System.out.println("|       /|\\     |   |");
-        System.out.println("|      / | \\    |   |");
-        System.out.println("|       /\\      |   |");
-        System.out.println("|      /  \\     |   |");
+        System.out.println("|       /|\\      |   |");
+        System.out.println("|      / | \\     |   |");
+        System.out.println("|       /\\       |    |");
+        System.out.println("|      /  \\      |   |");
         System.out.println("|                |   |");
         System.out.println("|                |   |");
         System.out.println("|     ===========    |");
@@ -439,6 +441,7 @@ public class Hangman {
         // If the use inputs 1 then play the game
         case 1:
             System.out.println("Game Initalized");
+            break;
         default:
         // If the user inputs something else than a number, then loop back the startMenu method
             System.out.println("Error: unnexpected value");
